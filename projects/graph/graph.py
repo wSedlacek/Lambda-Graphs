@@ -1,7 +1,8 @@
 """
 Simple graph implementation
 """
-from util import Stack, Queue  # These may come in handy
+from json import dumps
+from util import Stack, Queue
 
 
 class Graph:
@@ -15,13 +16,16 @@ class Graph:
         """
         Add a vertex to the graph.
         """
-        pass  # TODO
+        self.vertices[vertex_id] = set()
 
     def add_edge(self, v1, v2):
         """
         Add a directed edge to the graph.
         """
-        pass  # TODO
+        self.vertices[v1].add(v2)
+
+    def __str__(self):
+        return dumps(self.vertices)
 
     def get_neighbors(self, vertex_id):
         """
