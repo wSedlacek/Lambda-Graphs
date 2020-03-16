@@ -85,13 +85,28 @@ class Graph:
 
         dft(starting_vertex)
 
+    def search(self, stack_object: Callable, starting_vertex: int, destination_vertex: int):
+        stack = stack_object()
+        stack.push([starting_vertex])
+        visited = {starting_vertex}
+
+        while not stack.empty():
+            path = stack.pop()
+            vertex = path[-1]
+            if vertex == destination_vertex:
+                return path
+            for next_vertex in self.get_neighbors(vertex):
+                if next_vertex not in visited:
+                    visited.add(next_vertex)
+                    stack.push([*path, next_vertex])
+
     def bfs(self, starting_vertex: int, destination_vertex: int):
         """
         Return a list containing the shortest path from
         starting_vertex to destination_vertex in
         breath-first order.
         """
-        pass  # TODO
+        return self.search(Queue, starting_vertex, destination_vertex)
 
     def dfs(self, starting_vertex: int, destination_vertex: int):
         """
@@ -99,7 +114,7 @@ class Graph:
         starting_vertex to destination_vertex in
         depth-first order.
         """
-        pass  # TODO
+        return self.search(Stack, starting_vertex, destination_vertex)
 
     def dfs_recursive(self, starting_vertex: int, destination_vertex: int):
         """
@@ -109,7 +124,22 @@ class Graph:
 
         This should be done using recursion.
         """
-        pass  # TODO
+        visited = set()
+
+        def dfs(path: List[int]):
+            vertex = path[-1]
+            if vertex == destination_vertex:
+                return path
+
+            for next_vertex in self.get_neighbors(vertex):
+                if next_vertex not in visited:
+                    visited.add(vertex)
+                    found = dfs([*path, next_vertex])
+
+                    if found != None:
+                        return found
+
+        return dfs([starting_vertex])
 
 
 if __name__ == '__main__':
