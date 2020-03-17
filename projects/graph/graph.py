@@ -136,7 +136,7 @@ class Graph:
                     visited.add(vertex)
                     found = dfs([*path, next_vertex])
 
-                    if found != None:
+                    if found is not None:
                         return found
 
         return dfs([starting_vertex])
