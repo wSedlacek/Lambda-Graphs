@@ -1,3 +1,5 @@
+# Adventure
+
 ## Description
 
 You are provided with a pre-generated graph consisting of 500 rooms. You are responsible for filling `traversal_path` with directions that, when walked in order, will visit every room on the map at least once.
@@ -19,7 +21,7 @@ To solve this path, you'll want to construct your own traversal graph. You start
 }
 ```
 
-Try moving south and you will find yourself in room `5` which contains exits `['n', 's', 'e']`. You can now fill in some entries in your graph:
+Try moving south and you will find yourself in room `5` which contains exits `['n', 's', 'e']`. You can now **fill** in some entries in your graph:
 
 ```py
 {
