@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Room:
     def __init__(self, name: str, description: str, room_id: int, x: int, y: int):
         self.id = room_id
@@ -71,14 +72,12 @@ class Room:
         else:
             return None
 
-
     def connecting_rooms(self):
         rooms: List[Room] = []
         for exit in self.get_exits():
             rooms.append(self.get_room_in_direction(exit))
 
         return rooms
-
 
     def get_coords(self):
         return [self.x, self.y]

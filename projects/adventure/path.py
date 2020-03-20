@@ -1,4 +1,4 @@
-
+from random import shuffle
 from typing import Dict, List, Set, Tuple
 from util import Queue, Stack, inverse_direction
 
@@ -43,8 +43,10 @@ class Path:
             new_room = False
 
             # Pick a direction that is not visited.
-            for exit in room.get_exits():
-                potential_room = room.get_room_in_direction(exit)
+            exits = room.get_exits()
+            shuffle(exits)
+            for exit in exits:
+                potential_room: Room = room.get_room_in_direction(exit)
 
                 if potential_room not in visited:
                     # Move in that direction and append it
@@ -57,9 +59,10 @@ class Path:
                     new_room = True
                     break
 
+            if len(visited) == len(self.rooms):
+                return path
+
             # If there are no potential rooms then backtrack
             backtrack: str = items[1]
             if not new_room and backtrack:
                 path.append(backtrack)
-
-        return path

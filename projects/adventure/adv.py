@@ -20,6 +20,7 @@ room_graph = literal_eval(open(map_file, "r").read())
 world.load_graph(room_graph)
 world.print_rooms()
 
+
 def test(traversal_path: List[str]):
     player = Player(world.starting_room)
 
@@ -59,5 +60,10 @@ for room in world.rooms.values():
     for next_room in room.connecting_rooms():
         path.add_edge(room, next_room)
 
-pathing = path.full_path(world.starting_room)
+pathing = None
+while not pathing or len(pathing) >= 960:
+    pathing = path.full_path(world.starting_room)
+    if len(pathing) < 975:
+        print(len(pathing))
+
 test(pathing)
