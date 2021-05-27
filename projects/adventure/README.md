@@ -56,6 +56,10 @@ If all paths have been explored, you're done!
 
 It is very difficult to calculate the shortest possible path that traverses the entire graph. Why?
 
+The problem is two parts
+(a) Looping - It would be faster to utilize the loops to avoid backtracking but it is difficult to know when backtracking is required or a loop can be utilized
+(b) Backtracking - It is difficult to know when backtracking is required, for example once you have reach the end of the maze you don't need to back track anymore but how do you determine which path avoids the most back tracking?
+
 My best path is 957 moves. Can you find a shorter path?
 
 ## Rubric

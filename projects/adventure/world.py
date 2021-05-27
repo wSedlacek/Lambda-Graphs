@@ -1,14 +1,14 @@
+from typing import Dict, List
+
 from room import Room
-import random
-import math
 
 
 class World:
     def __init__(self):
-        self.starting_room = None
-        self.rooms = {}
-        self.room_grid = []
-        self.grid_size = 0
+        self.starting_room: Room = None
+        self.rooms: Dict[str, Room] = {}
+        self.room_grid: List[Room] = []
+        self.grid_size: int = 0
 
     def load_graph(self, room_graph):
         num_rooms = len(room_graph)

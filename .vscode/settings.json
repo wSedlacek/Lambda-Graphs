@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/Volumes/MacOS-Data/Home/wsedlacek/.local/share/virtualenvs/Lambda-Graphs-QFAuC4CZ/bin/python",
+    "python.autoComplete.extraPaths": [
+        "./projects/adventure"
+    ]
+}
