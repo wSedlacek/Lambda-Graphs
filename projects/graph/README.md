@@ -2,13 +2,12 @@
 
 This is a multi-stage project to implement a basic graph class and traversals.
 
-
 ## Part 1: Graph Class
 
 In the file `graph.py`, implement a `Graph` class that supports the API in the example below. In particular, this means there should be a field `vertices` that
 contains a dictionary mapping vertex labels to edges. For example:
 
-```python
+```py
 {
     '0': {'1', '3'},
     '1': {'0'},
@@ -24,7 +23,7 @@ You should also create `add_vertex` and `add_edge` methods that add the
 specified entities to the graph. To test your implementation, instantiate an
 empty graph and then try to run the following:
 
-```python
+```py
 graph = Graph()  # Instantiate your graph
 graph.add_vertex('0')
 graph.add_vertex('1')
@@ -38,7 +37,7 @@ print(graph.vertices)
 You should see something like the first example. As a stretch goal, add checks
 to your graph to ensure that edges to nonexistent vertices are rejected.
 
-```python
+```py
 # Continuing from previous example
 graph.add_edge('0', '4')  # No '4' vertex, should raise an Exception!
 ```
@@ -63,9 +62,6 @@ Write a function within your Graph class that takes takes a starting node and a 
 
 Write a function within your Graph class that takes takes a starting node and a destination node as an argument, then performs DFS. Your function should return a valid path (not necessarily the shortest) from the start node to the destination node. Note that there are multiple valid paths.
 
-
 ## Part 7: Implement Depth-First Search using Recursion
 
 Write a function within your Graph class that takes takes a starting node and a destination node as an argument, then performs DFS using recursion. Your function should return a valid path (not necessarily the shortest) from the start node to the destination node. Note that there are multiple valid paths.
-
-
